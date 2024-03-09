@@ -8,8 +8,8 @@ export default function handleProfileSignup(firstName, lastName, fileName) {
   return Promise.allSettled([userPromise, photoPromise])
     .then((results) => results.map((result) => {
       if (result.status === 'fulfilled') {
-        return { status: 'success', value: result.value };
+        return { status: result.status, value: result.value };
       }
-      return { status: 'error', value: result.reason };
+      return { status: result.status, value: result.reason };
     }));
 }
