@@ -1,16 +1,15 @@
 export default function cleanSet(set, startString) {
   const arrFromSet = Array.from(set);
   const foundStrArray = [];
-  const startStringLen = startString.length;
-  if (startStringLen < 1) {
+  if (!startString || startString.length < 1) {
     return '';
   }
+  const startStringLen = startString.length;
   let foundStr = '';
-  console.log(arrFromSet);
   arrFromSet.forEach((element) => {
     if (element.startsWith(startString)) {
-      const toAppdend = element.slice(startStringLen);
-      foundStrArray.push(toAppdend);
+      const toAppend = element.slice(startStringLen);
+      foundStrArray.push(toAppend);
     }
   });
   foundStr = foundStrArray.join('-');
