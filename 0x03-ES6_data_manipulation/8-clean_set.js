@@ -2,7 +2,7 @@ export default function cleanSet(set, startString) {
   const arrFromSet = Array.from(set);
   const foundStrArray = [];
   if (!startString || startString.length < 1) {
-    return '';
+    return;
   }
   const startStringLen = startString.length;
   let foundStr = '';
