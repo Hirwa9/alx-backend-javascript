@@ -1,6 +1,6 @@
 export default function cleanSet(set, startString) {
   const foundStrArray = [];
-  if (!startString || startString.length < 1) {
+  if (!startString || startString.length < 1 || (typeof startString !== 'string')) {
     return '';
   }
   const startStringLen = startString.length;
